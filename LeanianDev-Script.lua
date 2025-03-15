@@ -57,6 +57,31 @@ local function teleportToIslands()
     end
 end
 
+-- Webhook URL (ganti dengan URL webhook Anda)
+local webhookUrl = "https://discord.com/api/webhooks/1350400247221850173/rg8jYbvE63Acmaqv8bOqi00N9tN2wXM2XC70qe3EG0R6zzvT0dIfPzfUC_fRxWgV5TkE"
+
+-- Data yang akan dikirim ke Discord
+local playerName = game.Players.LocalPlayer.Name
+local placeId = game.PlaceId
+local placeName = game:GetService("MarketplaceService"):GetProductInfo(placeId).Name
+
+local message = string.format("Script digunakan oleh: **%s**\nGame: **%s** (PlaceId: %d)", playerName, placeName, placeId)
+
+-- Kirim data ke webhook
+local data = {
+    content = message
+}
+
+-- Gunakan HttpService untuk mengirim data
+local httpService = game:GetService("HttpService")
+local success, response = pcall(function()
+    httpService:PostAsync(webhookUrl, httpService:JSONEncode(data))
+end)
+
+if not success then
+    warn("Gagal mengirim data ke webhook: " .. response)
+end
+
 -- Fungsi untuk Membuat UI
 local function createGUI()
     local ScreenGui = Instance.new("ScreenGui")
@@ -149,3 +174,4 @@ end
 -- Jalankan GUI
 createGUI()
 print("GUI berhasil dibuat! Cek layar Anda.")
+
