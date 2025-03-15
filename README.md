@@ -1,7 +1,7 @@
 # LeanianDev-Script
 
 ## Description
-Hanya script biasa untuk The Hunt: Mega Edition (PlaceId: 124180448122765). Script ini menyediakan fitur-fitur seperti Auto Bobber, Auto Shake, Instant Reel, dan Teleport ke semua pulau.
+Hanya script biasa untuk game fisch roblox. Script ini menyediakan fitur-fitur seperti Auto Bobber, Auto Shake, Instant Reel, dan Teleport ke semua pulau.
 
 ## Features
 - **Auto Bobber**: Menangkap ikan secara otomatis ketika bobber bergerak.
